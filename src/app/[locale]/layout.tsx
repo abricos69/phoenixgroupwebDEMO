@@ -9,6 +9,7 @@ import '@/app/globals.css'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { DEFAULT_THEME, THEME_COOKIE } from '@/config/theme'
+import { SITE } from '@/config/site'
 import { routing } from '@/i18n/routing'
 
 const inter = Inter({
@@ -35,8 +36,11 @@ export async function generateMetadata({
 	const t = await getTranslations({ locale, namespace: 'meta' })
 
 	return {
+		metadataBase: new URL(SITE.url),
 		title: t('homeTitle'),
 		description: t('homeDescription'),
+		// Демо: закрыто от индексации (снять на боевом запуске).
+		robots: { index: false, follow: false },
 		openGraph: {
 			title: t('homeTitle'),
 			description: t('homeDescription'),

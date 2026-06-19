@@ -1,7 +1,9 @@
 export const SITE = {
   name: 'Phoenix Group Automotive',
-  domain: 'phoenixgroup.kiev.ua',
-  url: 'https://phoenixgroup.kiev.ua',
+  // Боевой домен клиента — вернуть на этапе полной переработки:
+  // domain: 'phoenixgroup.kiev.ua', url: 'https://phoenixgroup.kiev.ua'
+  domain: 'phoenix-group-demo.vercel.app',
+  url: 'https://phoenix-group-demo.vercel.app',
   geo: { lat: 50.4501, lng: 30.6133 },
 } as const;
 
